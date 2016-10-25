@@ -9,12 +9,6 @@ import org.apache.commons.lang3.ArrayUtils;
 
 public class DeDup {
 
-	public int[] randomIntegers = {1,2,34,34,25,1,45,3,26,85,4,34,86,25,43,2,1,10000,11,16,19,1,18,4,9,3,
-
-            20,17,8,15,6,2,5,10,14,12,13,7,8,9,1,2,15,12,18,10,14,20,17,16,3,6,19,
-
-            13,5,11,4,7,19,16,5,9,12,3,20,7,15,17,10,6,1,8,18,4,14,13,2,11};  
-
 	public int[] removeDuplicates( int[] data ){
 		int[] dataNoDuplicates;
 		if ( ArrayUtils.isNotEmpty(data) ){
@@ -63,5 +57,28 @@ public class DeDup {
 	
 	public static void main(String [] args) {
 
+		int[] randomIntegers = {1,2,34,34,25,1,45,3,26,85,4,34,86,25,43,2,1,10000,11,16,19,1,18,4,9,3,
+
+	            20,17,8,15,6,2,5,10,14,12,13,7,8,9,1,2,15,12,18,10,14,20,17,16,3,6,19,
+
+	            13,5,11,4,7,19,16,5,9,12,3,20,7,15,17,10,6,1,8,18,4,14,13,2,11}; 
+		
+		System.out.println("DeDup data with duplicates:");
+		System.out.println(Arrays.toString(randomIntegers));
+		
+		int[] randomIntegersWithoutDuplicates;
+		
+		DeDup deDup = new DeDup();
+		System.out.println("DeDup.removeDuplicates()");
+		randomIntegersWithoutDuplicates = deDup.removeDuplicates(randomIntegers);
+		System.out.println(Arrays.toString(randomIntegersWithoutDuplicates));
+		
+		System.out.println("DeDup.removeDuplicatesPreserveOrder()");
+		randomIntegersWithoutDuplicates = deDup.removeDuplicatesPreserveOrder(randomIntegers);
+		System.out.println(Arrays.toString(randomIntegersWithoutDuplicates));
+		
+		System.out.println("DeDup.removeDuplicatesWithoutCollections()");
+		randomIntegersWithoutDuplicates = deDup.removeDuplicatesWithoutCollections(randomIntegers);
+		System.out.println(Arrays.toString(randomIntegersWithoutDuplicates));
 	}
 }
