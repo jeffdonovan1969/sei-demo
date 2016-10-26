@@ -12,63 +12,60 @@ public class DeDupTest {
 
             13,5,11,4,7,19,16,5,9,12,3,20,7,15,17,10,6,1,8,18,4,14,13,2,11};
 	
-	private DeDup deDup = new DeDup();
-	
 	// remove Duplicates
 	@Test
 	public void testRemoveDuplicatesNullArray(){
-		int[] noDuplicates = deDup.removeDuplicates(null);
+		int[] noDuplicates = DeDup.removeDuplicates(null);
 		assertEquals(noDuplicates.length,0);
 	}
 	
 	@Test
 	public void testRemoveDuplicatesEmptyArray(){
-		int[] randomIntegers = {};
-		DeDup deDup = new DeDup();
-		int[] noDuplicates = deDup.removeDuplicates(randomIntegers);
+		int[] randomIntegers = {};;
+		int[] noDuplicates = DeDup.removeDuplicates(randomIntegers);
 		assertEquals(noDuplicates.length,0);
 	}
 	
 	@Test
 	public void testRemoveDuplicates(){
 		int[] randomIntegers = {-1,-1,0,1,1,2,2,4,3,3};
-		int[] noDuplicates = deDup.removeDuplicates(randomIntegers);
+		int[] noDuplicates = DeDup.removeDuplicates(randomIntegers);
 		assertEquals(noDuplicates.length,6);
 	}
 	
 	@Test
 	public void testRemoveDuplicatesAllDuplicates(){
 		int[] randomIntegers = {-1,-1,0,0,1,1,2,2,4,4,3,3};
-		int[] noDuplicates = deDup.removeDuplicates(randomIntegers);
+		int[] noDuplicates = DeDup.removeDuplicates(randomIntegers);
 		assertEquals(noDuplicates.length,6);
 	}
 	
 	//removeDuplicatesWithoutCollections
 	@Test
 	public void testRemoveDuplicatesWithoutCollectionsNullArray(){
-		int[] noDuplicates = deDup.removeDuplicatesWithoutCollections(null);
+		int[] noDuplicates = DeDup.removeDuplicatesWithoutCollections(null);
 		assertEquals(noDuplicates.length,0);
 	}
 	
 	@Test
 	public void testRemoveDuplicatesWithoutCollectionsEmptyArray(){
 		int[] randomIntegers = {};
-		DeDup deDup = new DeDup();
-		int[] noDuplicates = deDup.removeDuplicatesWithoutCollections(randomIntegers);
+		DeDup DeDup = new DeDup();
+		int[] noDuplicates = DeDup.removeDuplicatesWithoutCollections(randomIntegers);
 		assertEquals(noDuplicates.length,0);
 	}
 	
 	@Test
 	public void testRemoveDuplicatesWithoutCollections(){
 		int[] randomIntegers = {-1,-1,0,1,1,2,2,4,3,3};
-		int[] noDuplicates = deDup.removeDuplicatesWithoutCollections(randomIntegers);
+		int[] noDuplicates = DeDup.removeDuplicatesWithoutCollections(randomIntegers);
 		assertEquals(noDuplicates.length,6);
 	}
 	
 	@Test
 	public void testRemoveDuplicatesWithoutCollectionsAllDuplicates(){
 		int[] randomIntegers = {-1,-1,0,0,1,1,2,2,4,4,3,3};
-		int[] noDuplicates = deDup.removeDuplicatesWithoutCollections(randomIntegers);
+		int[] noDuplicates = DeDup.removeDuplicatesWithoutCollections(randomIntegers);
 		assertEquals(noDuplicates.length,6);
 	}
 	
@@ -82,22 +79,21 @@ public class DeDupTest {
 	
 	@Test
 	public void testRemoveDuplicatesPreserveOrderNullArray(){
-		int[] noDuplicates = deDup.removeDuplicatesPreserveOrder(null);
+		int[] noDuplicates = DeDup.removeDuplicatesPreserveOrder(null);
 		assertEquals(noDuplicates.length,0);
 	}
 	
 	@Test
 	public void testRemoveDuplicatesPreserveOrderEmptyArray(){
 		int[] randomIntegers = {};
-		DeDup deDup = new DeDup();
-		int[] noDuplicates = deDup.removeDuplicatesPreserveOrder(randomIntegers);
+		int[] noDuplicates = DeDup.removeDuplicatesPreserveOrder(randomIntegers);
 		assertEquals(noDuplicates.length,0);
 	}
 	
 	@Test
 	public void testRemoveDuplicatesPreserveOrder(){
 		int[] randomIntegers = {1,-1,-1,2,0,0};
-		int[] noDuplicates = deDup.removeDuplicatesPreserveOrder(randomIntegers);
+		int[] noDuplicates = DeDup.removeDuplicatesPreserveOrder(randomIntegers);
 		assertEquals(noDuplicates.length,4);
 		testPreserveOrder(noDuplicates, new int[]{1,-1,2,0});
 	}
@@ -105,7 +101,7 @@ public class DeDupTest {
 	@Test
 	public void testRemoveDuplicatesPreserveOrderAllDuplicates(){
 		int[] randomIntegers = {1,-1,-1,2,2,0,0};
-		int[] noDuplicates = deDup.removeDuplicatesPreserveOrder(randomIntegers);
+		int[] noDuplicates = DeDup.removeDuplicatesPreserveOrder(randomIntegers);
 		assertEquals(noDuplicates.length,4);
 		testPreserveOrder(noDuplicates, new int[]{1,-1,2,0});
 		

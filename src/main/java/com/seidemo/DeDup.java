@@ -9,7 +9,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 public class DeDup {
 
-	public int[] removeDuplicates( int[] data ){
+	public final static int[] removeDuplicates( int[] data ){
 		int[] dataNoDuplicates;
 		if ( ArrayUtils.isNotEmpty(data) ){
 			Set<Integer> set = Arrays.stream(data).boxed().collect(Collectors.toSet());
@@ -21,7 +21,7 @@ public class DeDup {
 		return dataNoDuplicates;
 	}
 	
-	public int[] removeDuplicatesWithoutCollections( int[] data ){
+	public final static int[] removeDuplicatesWithoutCollections( int[] data ){
 		int[] dataNoDuplicates;
 		if ( ArrayUtils.isNotEmpty(data) ){
 			int end = data.length;
@@ -43,7 +43,7 @@ public class DeDup {
 	    return dataNoDuplicates;
 	}
 	
-	public int[] removeDuplicatesPreserveOrder( int[] data ){
+	public final static int[] removeDuplicatesPreserveOrder( int[] data ){
 		int[] dataNoDuplicates;
 		if ( ArrayUtils.isNotEmpty(data) ){
 			Set<Integer> set = Arrays.stream(data).boxed().collect(Collectors.toCollection(LinkedHashSet::new));
@@ -68,17 +68,16 @@ public class DeDup {
 		
 		int[] randomIntegersWithoutDuplicates;
 		
-		DeDup deDup = new DeDup();
 		System.out.println("DeDup.removeDuplicates()");
-		randomIntegersWithoutDuplicates = deDup.removeDuplicates(randomIntegers);
+		randomIntegersWithoutDuplicates = DeDup.removeDuplicates(randomIntegers);
 		System.out.println(Arrays.toString(randomIntegersWithoutDuplicates));
 		
 		System.out.println("DeDup.removeDuplicatesPreserveOrder()");
-		randomIntegersWithoutDuplicates = deDup.removeDuplicatesPreserveOrder(randomIntegers);
+		randomIntegersWithoutDuplicates = DeDup.removeDuplicatesPreserveOrder(randomIntegers);
 		System.out.println(Arrays.toString(randomIntegersWithoutDuplicates));
 		
 		System.out.println("DeDup.removeDuplicatesWithoutCollections()");
-		randomIntegersWithoutDuplicates = deDup.removeDuplicatesWithoutCollections(randomIntegers);
+		randomIntegersWithoutDuplicates = DeDup.removeDuplicatesWithoutCollections(randomIntegers);
 		System.out.println(Arrays.toString(randomIntegersWithoutDuplicates));
 	}
 }
